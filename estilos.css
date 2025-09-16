@@ -1,0 +1,82 @@
+/* 
+  Actividad: Mejora de la Interacción y Estilo con Selectores CSS
+  Explicaciones agregadas en cada línea.
+*/
+
+/* 1. Estilo base para la página */
+body {
+  background-color: rgb(248, 158, 40); /* Define un color de fondo para la página */
+}
+
+
+
+/* Estilo base de los enlaces */
+a {
+  padding: 10px 5%;              /* Agrega espacio alrededor del texto */
+  background-color: rgb(26, 248, 156); /* Fondo verde claro */
+  font-style: italic;            /* Pone el texto en cursiva */
+  border-radius: 10%;            /* Bordes redondeados */
+  text-decoration: none;         /* Quita el subrayado por defecto */
+}
+
+/* 2. Estilo cuando el enlace recibe foco (:focus) */
+a:focus {
+  background-color: yellow;      /* Cambia el fondo a amarillo al enfocar */
+  color: black;                  /* Texto en negro */
+  text-decoration: none;         /* Elimina subrayado */
+  border: 2px solid red;         /* Borde rojo para resaltar el foco */
+}
+li {
+  margin-bottom: 30px;  /* Deja 10px debajo de cada enlace */
+}
+
+/* 3. Resaltar el primer y último enlace */
+li:first-child a {
+  background-color: orange;      /* Fondo naranja para el primer enlace */
+  color: white;                  /* Texto blanco */
+}
+
+li:last-child a {
+  background-color: darkblue;    /* Fondo azul oscuro para el último enlace */
+  color: white;                  /* Texto blanco */
+}
+
+/* 4. Efecto al pasar el mouse (:hover + ::after) */
+a:hover {
+  background-color: lightblue;   /* Cambia el fondo a azul claro al pasar el ratón */
+  transition: 0.3s;              /* Suaviza la transición */
+}
+
+a:hover::after {
+  content: " 🔗";                /* Agrega un ícono de enlace al pasar el ratón */
+  font-size: 14px;               /* Ajusta el tamaño del ícono */
+  color: red;                    /* Color del ícono */
+}
+
+/* 5. Estilizar la primera letra de cada enlace (::first-letter) */
+a::first-letter {
+  font-size: 20px;               /* Hace más grande la primera letra */
+  font-weight: bold;             /* Aplica negrita */
+  color: #ff0000;                /* La pone en rojo */
+}
+
+/* 6. Estilos alternados con :nth-child() */
+li:nth-child(odd) a {
+  background-color: #d1ffd1;     /* Fondo verde claro para enlaces en posición impar */
+}
+
+li:nth-child(even) a {
+  background-color: #d1e0ff;     /* Fondo azul claro para enlaces en posición par */
+}
+
+/* Desafío 1: Cambiar el estilo de la primera línea */
+a::first-line {
+  text-transform: uppercase;     /* Convierte en mayúsculas la primera línea */
+  color: purple;                 /* Le da un color púrpura */
+}
+/* Desafío 2: Animación con hover */
+a:hover {
+  transform: scale(1.1) translateY(-3px); /* Hace que crezca y suba un poco */
+  transition: all 0.3s ease;              /* Suaviza la animación */
+}
+
